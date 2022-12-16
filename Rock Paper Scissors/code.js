@@ -13,6 +13,7 @@ function capitalizeWord(str) {
 function playRound(playerSelection, computerSelection = getComputerChoice()) {
     playerSelection = playerSelection.toLowerCase();
     let outcome = '';
+    
     if(playerSelection === 'rock' && computerSelection === 'paper' ||
     playerSelection === 'paper' && computerSelection === 'scissors' ||
     playerSelection === 'scissors' && computerSelection === 'rock'){

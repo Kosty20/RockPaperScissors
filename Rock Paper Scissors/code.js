@@ -48,9 +48,9 @@ function game(){
         }
     }
     if(x < y){
-        prompt(`You win!`)
+        alert(`You win!`)
     } else if(x > y){
-        prompt(`You lose!`);
+        alert(`You lose!`);
     }
 }
 

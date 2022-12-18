@@ -27,30 +27,19 @@ function playRound(playerSelection, computerSelection = getComputerChoice()) {
     } else {
         outcome = `Chose either rock, paper or scissors`;
     }
-
+    console.log(outcome);
     return outcome;
 }
 
-function game(){
-    let x = 0; y = 0;
-    for(i = 1; i<= 5; i++){
-        let playerSelection = prompt(`Rock, Paper, Scissors!`)
-        let game = playRound(playerSelection, computerSelection = getComputerChoice());
-        if(game === `You lose! ${capitalizeWord(playerSelection)} is beat by ${computerSelection}!`){
-            x++;
-            console.log(`You lost this one`);
-        } else if(game === `You win! ${capitalizeWord(playerSelection)} beats ${computerSelection}!`){
-            y++;
-            console.log(`You won this battle`);
-        } else {
-            i--; //if theres a draw or the input is incorrect, the round doesnt count
-            console.log(`Draw, this one didnt count!`);
-        }
-    }
-    if(x < y){
-        alert(`You win!`)
-    } else if(x > y){
-        alert(`You lose!`);
-    }
+function getPlayerSelection(btn){
+    btn.addEventListener('click', playRound(btn.id));
 }
+
+const rock = document.getElementById('rock')
+const paper = document.getElementById('paper')
+const scissors = document.getElementById('scissors')
+const btns = document.querySelectorAll('button')
+
+btns.forEach(addEventListener('click', playRound()));
+
 

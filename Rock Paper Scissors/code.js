@@ -31,15 +31,12 @@ function playRound(playerSelection, computerSelection = getComputerChoice()) {
     return outcome;
 }
 
-function getPlayerSelection(btn){
-    btn.addEventListener('click', playRound(btn.id));
-}
-
-const rock = document.getElementById('rock')
-const paper = document.getElementById('paper')
-const scissors = document.getElementById('scissors')
 const btns = document.querySelectorAll('button')
 
-btns.forEach(addEventListener('click', playRound()));
+btns.forEach(btn => {
+    btn.addEventListener('click', () => { 
+        playRound(playerSelection = btn.id);
+    })
+});
 
 

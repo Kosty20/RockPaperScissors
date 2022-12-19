@@ -17,13 +17,13 @@ function playRound(playerSelection, computerSelection = getComputerChoice()) {
     if(playerSelection === 'rock' && computerSelection === 'paper' ||
     playerSelection === 'paper' && computerSelection === 'scissors' ||
     playerSelection === 'scissors' && computerSelection === 'rock'){
-        outcome = `You lose! ${capitalizeWord(playerSelection)} is beat by ${computerSelection}!`;
+        outcome = `You lose!`;
     } else if(playerSelection === computerSelection){
-        outcome = `Draw! Both chose ${playerSelection}!`;
+        outcome = `Draw!`;
     } else if(playerSelection === 'paper' && computerSelection === 'rock' ||
     playerSelection === 'scissors' && computerSelection === 'paper' ||
     playerSelection === 'rock' && computerSelection === 'scissors'){
-        outcome = `You win! ${capitalizeWord(playerSelection)} beats ${computerSelection}!`;
+        outcome = `You win!`;
     } else {
         outcome = `Chose either rock, paper or scissors`;
     }

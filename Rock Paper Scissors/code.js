@@ -27,15 +27,22 @@ function playRound(playerSelection, computerSelection = getComputerChoice()) {
     } else {
         outcome = `Chose either rock, paper or scissors`;
     }
+    playerWindow.src = `PNGs/${playerSelection}.png`;
+    computerWindow.src = `PNGs/${computerSelection}.png`;
     console.log(outcome);
     return outcome;
 }
 
 const btns = document.querySelectorAll('div.btn-box>div>img')
+const playerWindow = document.querySelector('div.screen>div.player>img');
+const computerWindow = document.querySelector('div.screen>div.computer>img');
+
 
 btns.forEach(btn => {
-    btn.addEventListener('click', () => { 
-        playRound(playerSelection = btn.alt);
+    btn.addEventListener('click', () => {
+        playerWindow.src = ``;
+        computerWindow.src = ``;
+        setTimeout(() => {playRound(playerSelection = btn.alt);}, 1000);    
     })
 });
 

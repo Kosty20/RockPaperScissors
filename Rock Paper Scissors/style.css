@@ -1,3 +1,13 @@
+.material-symbols-outlined{
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/*//////////////////////////////////////////*/
+
 *{
     box-sizing:  border-box;
     padding: 0;
@@ -32,8 +42,15 @@ body{
     overflow: hidden;
 }
 .screen>div{
+    position: relative;
     width: 50%;
     background-color: black;
+    display: flex;
+}
+.screen>div>img{
+    width: 70%;
+    margin: auto;
+    filter: invert();
 }
 .screen>.border{
     width: 0;
@@ -45,7 +62,6 @@ body{
     width: 100%;
     display: flex;
     justify-content: space-around;
-    border: 5px solid black;
 }
 .btn-box>div{
     width:0;
@@ -54,6 +70,9 @@ body{
     width:fit-content;
     
     display: flex;
+
+    border: 5px solid;
+    border-radius: 0 0 100px 100px ;
 }
 .btn-box>div:nth-child(2){
     border-left: 5px solid;

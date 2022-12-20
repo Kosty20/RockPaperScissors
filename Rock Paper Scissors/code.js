@@ -31,12 +31,14 @@ function playRound(playerSelection, computerSelection = getComputerChoice()) {
     return outcome;
 }
 
-const btns = document.querySelectorAll('button')
+const btns = document.querySelectorAll('div.btn-box>div>img')
 
 btns.forEach(btn => {
     btn.addEventListener('click', () => { 
-        playRound(playerSelection = btn.id);
+        playRound(playerSelection = btn.alt);
     })
 });
+
+
 
 

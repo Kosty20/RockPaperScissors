@@ -10,6 +10,8 @@ function capitalizeWord(str) {
     return x + y;
 }
 
+const outcomeBox = document.querySelector('div.outcome');
+
 function playRound(playerSelection, computerSelection = getComputerChoice()) {
     playerSelection = playerSelection.toLowerCase();
     let outcome = '';
@@ -29,6 +31,9 @@ function playRound(playerSelection, computerSelection = getComputerChoice()) {
     }
     playerWindow.src = `PNGs/${playerSelection}.png`;
     computerWindow.src = `PNGs/${computerSelection}.png`;
+    setTimeout(() => {
+        outcomeBox.innerText = outcome;
+    }, 500);
     console.log(outcome);
     return outcome;
 }
@@ -40,6 +45,7 @@ const computerWindow = document.querySelector('div.screen>div.computer>img');
 
 btns.forEach(btn => {
     btn.addEventListener('click', () => {
+        outcomeBox.innerText = ``;
         playerWindow.src = ``;
         computerWindow.src = ``;
         setTimeout(() => {playRound(playerSelection = btn.alt);}, 1000);    

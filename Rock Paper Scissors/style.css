@@ -1,5 +1,5 @@
 .material-symbols-outlined{
-    background-color: white;
+    color: white;
     position: absolute;
     top: 0;
     left: 50%;
@@ -27,10 +27,7 @@ body{
     max-width: 100%;
     width: 800px;
     min-width: 300px;
-
     margin: auto;
-    overflow: hidden;
-    border-radius: 50px 50px 0 0 ;
 }
 
 .screen{
@@ -38,8 +35,6 @@ body{
     width: 100%;
     display: flex;
     position: relative;
-    border-radius: 50px 50px 0 0;
-    overflow: hidden;
 }
 .screen>div{
     position: relative;
@@ -47,6 +42,7 @@ body{
     background-color: black;
     display: flex;
 }
+
 .screen>div>img{
     width: 70%;
     margin: auto;
@@ -55,6 +51,28 @@ body{
 .screen>.border{
     width: 0;
     border: 2px solid white;
+}
+.screen>div>.score{
+    position: absolute;
+    background-color: white;
+    border: 1px solid;
+}
+.screen>div>.playerScore{
+    left: -66px;
+    border-radius: 20px 0 0 20px;
+}
+.screen>div>.computerScore{
+    right: -66px;
+    border-radius: 0 20px 20px 0;
+}
+.screen>div>.score>div{
+    aspect-ratio: 1;
+    width: 25px;
+    margin: 20px;
+    border-radius: 50px;
+    background-color: black;
+    border: 5px solid white;
+    box-shadow: 0 0 0 5px black;
 }
 
 .btn-box{

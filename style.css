@@ -15,7 +15,7 @@
 
 body{
     height: 100vh;
-    padding: 50px;
+    padding: 100px;
 }
 
 #container{
@@ -35,6 +35,7 @@ body{
     width: 100%;
     display: flex;
     position: relative;
+    border: 5px solid;
 }
 .screen>div{
     position: relative;
@@ -42,9 +43,17 @@ body{
     background-color: black;
     display: flex;
 }
-
-.screen>div>img{
-    width: 70%;
+.screen>div>.imgDiv{
+    display: flex;
+    aspect-ratio: 1;
+    width: 50%;
+    min-width: 100px;
+    margin: auto;
+    border: 5px solid white;
+    border-radius: 1000px;
+}
+.screen>div>div>img{
+    width: 80%;
     margin: auto;
     filter: invert();
 }
@@ -56,21 +65,21 @@ body{
     position: absolute;
     background-color: white;
     border: 1px solid;
+    top: -5px;
 }
 .screen>div>.playerScore{
-    left: -66px;
+    left: -71px;
     border-radius: 20px 0 0 20px;
 }
 .screen>div>.computerScore{
-    right: -66px;
+    right: -71px;
     border-radius: 0 20px 20px 0;
 }
 .screen>div>.score>div{
     aspect-ratio: 1;
     width: 25px;
-    margin: 20px;
+    margin: 25px 20px;
     border-radius: 50px;
-    background-color: black;
     border: 5px solid white;
     box-shadow: 0 0 0 5px black;
 }
@@ -80,24 +89,25 @@ body{
     width: 100%;
     display: flex;
     justify-content: space-around;
+    border: 5px solid;
+    border-top: none;
 }
-.btn-box>div{
+.btn-box>button{
     width:0;
     padding: 20px;
     background-color: white;
     width:fit-content;
-    
     display: flex;
-
-    border: 5px solid;
-    border-radius: 0 0 100px 100px ;
+    border: none;
 }
-.btn-box>div:nth-child(2){
-    border-left: 5px solid;
-    border-right: 5px solid;
-
+.btn-box>button:disabled{
+    color:black !important;
 }
-.btn-box>div>img{
+.btn-box>button:nth-child(2){
+    border-left: 5px solid !important;
+    border-right: 5px solid !important;
+}
+.btn-box>button>img{
     width: 30%;
     min-width: 50px;
     padding: 5px;
@@ -115,7 +125,7 @@ body{
 
     cursor: pointer;
 }
-.btn-box>div>img:hover{
+.btn-box>button>img:hover{
     transform: scale(1.1);
 }
 .outcome{
@@ -126,6 +136,6 @@ body{
     font-size: 40px;
 
     position: relative;
-    top: 200px;
+    top: 150px;
     margin: auto;
 }

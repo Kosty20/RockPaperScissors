@@ -4,6 +4,7 @@ function getComputerChoice() {
 }
 
 
+
 const outcomeBox = document.querySelector('div.outcome');
 const playerScore = document.querySelectorAll('#container>.screen>.player>.playerScore>div');
 const computerScore = document.querySelectorAll('#container>.screen>.computer>.computerScore>div');
@@ -32,16 +33,14 @@ function playRound(playerSelection, computerSelection = getComputerChoice()) {
         playerScore[x].style.backgroundColor = 'black';
         x++;
         if(x === playerScore.length){
-            outcomeBox.innerText = `You win!`;
-            x = 0; y = 0;
-
-        }
+            outcomeBox.innerText = outcome;
+            btns.forEach()
+        };
     } else if(outcome === `You lose!`){
         computerScore[y].style.backgroundColor = 'black';
         y++;
         if(y === computerScore.length){
-            outcomeBox.innerText = `You lost!`;
-            x = 0; y = 0;
+            outcomeBox.innerText = outcome;
         };
     }
 

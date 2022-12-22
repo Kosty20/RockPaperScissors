@@ -119,11 +119,14 @@ body{
     border: 5px solid;
     border-radius:50px;
 
-    transition: all 0.3s;
+    transition: transform 0.3s;
 
     box-shadow:0 0 0 5px white;
 
     cursor: pointer;
+}
+.btn-box>button>img:active{
+    border-color: white;
 }
 .btn-box>button>img:hover{
     transform: scale(1.1);

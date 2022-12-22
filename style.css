@@ -1,4 +1,4 @@
-.material-symbols-outlined{
+.material-symbols-outlined {
     color: white;
     position: absolute;
     top: 0;
@@ -8,17 +8,19 @@
 
 /*//////////////////////////////////////////*/
 
-*{
-    box-sizing:  border-box;
+* {
+    box-sizing: border-box;
     padding: 0;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
-body{
+body {
     height: 100vh;
     padding: 100px;
 }
 
-#container{
+#container {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
@@ -30,20 +32,22 @@ body{
     margin: auto;
 }
 
-.screen{
+.screen {
     height: 70%;
     width: 100%;
     display: flex;
     position: relative;
     border: 5px solid;
 }
-.screen>div{
+
+.screen>div {
     position: relative;
     width: 50%;
     background-color: black;
     display: flex;
 }
-.screen>div>.imgDiv{
+
+.screen>div>.imgDiv {
     display: flex;
     aspect-ratio: 1;
     width: 50%;
@@ -52,30 +56,36 @@ body{
     border: 5px solid white;
     border-radius: 1000px;
 }
-.screen>div>div>img{
+
+.screen>div>div>img {
     width: 80%;
     margin: auto;
     filter: invert();
 }
-.screen>.border{
+
+.screen>.border {
     width: 0;
     border: 2px solid white;
 }
-.screen>div>.score{
+
+.screen>div>.score {
     position: absolute;
     background-color: white;
     border: 1px solid;
     top: -5px;
 }
-.screen>div>.playerScore{
+
+.screen>div>.playerScore {
     left: -71px;
     border-radius: 20px 0 0 20px;
 }
-.screen>div>.computerScore{
+
+.screen>div>.computerScore {
     right: -71px;
     border-radius: 0 20px 20px 0;
 }
-.screen>div>.score>div{
+
+.screen>div>.score>div {
     aspect-ratio: 1;
     width: 25px;
     margin: 25px 20px;
@@ -84,7 +94,7 @@ body{
     box-shadow: 0 0 0 5px black;
 }
 
-.btn-box{
+.btn-box {
     height: 30%;
     width: 100%;
     display: flex;
@@ -92,53 +102,63 @@ body{
     border: 5px solid;
     border-top: none;
 }
-.btn-box>button{
-    width:0;
-    padding: 20px;
+
+.btn-box>div {
     background-color: white;
-    width:fit-content;
     display: flex;
-    border: none;
+    width: 100%;
 }
-.btn-box>button:disabled{
-    color:black !important;
-}
-.btn-box>button:nth-child(2){
-    border-left: 5px solid !important;
-    border-right: 5px solid !important;
-}
-.btn-box>button>img{
-    width: 30%;
-    min-width: 50px;
-    padding: 5px;
+
+.btn-box>div>button {
+    background-color: black;
+    padding: 10px;
+    padding-bottom: 7px;
+    border-radius:100px;
     margin: auto;
-
-    filter:invert(100%);
-
-    background-color: white;
-    border: 5px solid;
-    border-radius:50px;
-
-    transition: transform 0.3s;
-
-    box-shadow:0 0 0 5px white;
-
-    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
 }
-.btn-box>button>img:active{
+
+.btn-box>div>button:disabled {
+    color: black !important;
+}
+
+.btn-box>div:nth-child(2) {
+    border-left: 5px solid;
+    border-right: 5px solid;
+}
+
+.btn-box>div>button>img {
+    width: 80px;
+    padding: 5px;
+    background-color: white;
+    border: 10px solid;
+    border-radius: 50px;
+    cursor: pointer;
+    filter: invert();
+}
+
+.btn-box>div>button>img:active {
     border-color: white;
 }
-.btn-box>button>img:hover{
+
+.btn-box>div>button:hover {
     transform: scale(1.1);
 }
-.outcome{
+
+.outcome {
     height: 40px;
     width: fit-content;
 
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 40px;
 
     position: relative;
     top: 150px;
     margin: auto;
+}
+
+.restart {
+    position: absolute;
+    top: 300px;
 }

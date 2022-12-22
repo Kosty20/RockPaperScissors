@@ -4,10 +4,15 @@ function getComputerChoice() {
 }
 
 
-
 const outcomeBox = document.querySelector('div.outcome');
 const playerScore = document.querySelectorAll('#container>.screen>.player>.playerScore>div');
 const computerScore = document.querySelectorAll('#container>.screen>.computer>.computerScore>div');
+const btns = document.querySelectorAll('div.btn-box>div>button')
+const playerWindow = document.querySelector('div.screen>div.player>div>img');
+const computerWindow = document.querySelector('div.screen>div.computer>div>img');
+const restart = document.querySelector('.restart');
+
+let x = 0, y = 0;
 
 function playRound(playerSelection, computerSelection = getComputerChoice()) {
     playerSelection = playerSelection.toLowerCase();
@@ -26,6 +31,7 @@ function playRound(playerSelection, computerSelection = getComputerChoice()) {
     } else {
         outcome = `Chose either rock, paper or scissors`;
     }
+
     playerWindow.src = `PNGs/${playerSelection}.png`;
     computerWindow.src = `PNGs/${computerSelection}.png`;
 
@@ -34,7 +40,6 @@ function playRound(playerSelection, computerSelection = getComputerChoice()) {
         x++;
         if(x === playerScore.length){
             outcomeBox.innerText = outcome;
-            btns.forEach()
         };
     } else if(outcome === `You lose!`){
         computerScore[y].style.backgroundColor = 'black';
@@ -45,17 +50,7 @@ function playRound(playerSelection, computerSelection = getComputerChoice()) {
     }
 
     console.log(outcome);
-    return outcome;
 }
-
-let x = 0, y = 0;
-
- 
-
-const btns = document.querySelectorAll('div.btn-box>button')
-const playerWindow = document.querySelector('div.screen>div.player>div>img');
-const computerWindow = document.querySelector('div.screen>div.computer>div>img');
-
 
 btns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -65,14 +60,30 @@ btns.forEach(btn => {
         playerWindow.src = ``;
         computerWindow.src = ``;
         setTimeout(() => {
-            playRound(playerSelection = btn.id)
-            for(let i of btns){
-                i.disabled = false;
-            } 
+            playRound(playerSelection = btn.id);
+            if(x !== 5 && y !== 5){
+                for(let i of btns){
+                    i.disabled = false;
+                } 
+            }
         }, 1000);    
     })
 });
-toLowerCase
 
+restart.addEventListener('click', () => {
+    x = 0; y = 0;
+    for(let btn of btns){
+        btn.disabled = false;
+    }
+    for(let i of playerScore){
+        i.style.backgroundColor = 'white';
+    }
+    for(let j of computerScore){
+        j.style.backgroundColor = 'white'
+    }
+    playerWindow.src = ``;
+    computerWindow.src = ``;
+    outcomeBox.innerText = '';
+})
 
 

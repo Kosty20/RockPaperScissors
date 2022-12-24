@@ -39,17 +39,23 @@ function playRound(playerSelection, computerSelection = getComputerChoice()) {
         playerScore[x].style.backgroundColor = 'black';
         x++;
         if(x === playerScore.length){
-            outcomeBox.innerText = outcome;
+            finish(outcome);
         };
     } else if(outcome === `You lose!`){
         computerScore[y].style.backgroundColor = 'black';
         y++;
         if(y === computerScore.length){
-            outcomeBox.innerText = outcome;
+            finish(outcome);
         };
     }
 
     console.log(outcome);
+}
+
+function finish(i){
+    outcomeBox.innerText = i;
+    setTimeout(() => {outcomeBox.classList.remove('fade')}, 1000);
+    setTimeout(() => {restart.classList.remove('fade');}, 2000)
 }
 
 btns.forEach(btn => {
@@ -83,7 +89,8 @@ restart.addEventListener('click', () => {
     }
     playerWindow.src = ``;
     computerWindow.src = ``;
-    outcomeBox.innerText = '';
+    restart.classList.add('fade');
+    outcomeBox.classList.add('fade')
 })
 
 

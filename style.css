@@ -20,6 +20,7 @@ body {
     padding: 100px;
     height: 100vh;
     overflow: hidden;
+    background-color: grey;
 }
 
 .big-container{
@@ -39,6 +40,7 @@ body {
     width: 800px;
     min-width: 250px;
     z-index: 10;
+    box-shadow: 0 0 20px 10px rgb(66, 66, 66);
 }
 
 .screen {
@@ -67,6 +69,7 @@ body {
 .screen>div>div>img {
     width: 80%;
     margin: auto;
+    transition: transform 0.4s;
     filter: invert();
 }
 
@@ -161,8 +164,7 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 40px;
 
-
-    transition: all .5s;
+    transition: transform .5s, opacity .5s;
 
     z-index: -1;
 }
@@ -181,7 +183,6 @@ body {
 
     transform-origin: center;
     transition: transform 0.5s, opacity 0.5s;
-    cursor: pointer;
 }
 .restart:active{
     transform: scale(1.1);

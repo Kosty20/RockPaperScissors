@@ -34,6 +34,8 @@ function playRound(playerSelection, computerSelection = getComputerChoice()) {
 
     playerWindow.src = `PNGs/${playerSelection}.png`;
     computerWindow.src = `PNGs/${computerSelection}.png`;
+    playerWindow.style.transform = 'scale(1)';
+    computerWindow.style.transform = 'scale(1)';
 
     if(outcome === `You win!`){
         playerScore[x].style.backgroundColor = 'black';
@@ -55,16 +57,20 @@ function playRound(playerSelection, computerSelection = getComputerChoice()) {
 function finish(i){
     outcomeBox.innerText = i;
     setTimeout(() => {outcomeBox.classList.remove('fade')}, 1000);
-    setTimeout(() => {restart.classList.remove('fade');}, 2000)
+    setTimeout(() => {
+        restart.classList.remove('fade');
+        restart.disabled = false;
+        restart.style.cursor = 'pointer'
+    }, 2000)
 }
 
 btns.forEach(btn => {
     btn.addEventListener('click', () => {
         for(let i of btns){
             i.disabled = true;
-        } 
-        playerWindow.src = ``;
-        computerWindow.src = ``;
+        }; 
+        playerWindow.style.transform = 'scale(0)';
+        computerWindow.style.transform = 'scale(0)';
         setTimeout(() => {
             playRound(playerSelection = btn.id);
             if(x !== 5 && y !== 5){
@@ -77,6 +83,8 @@ btns.forEach(btn => {
 });
 
 restart.addEventListener('click', () => {
+    restart.disabled = true;
+    restart.style.cursor = 'default'
     x = 0; y = 0;
     for(let btn of btns){
         btn.disabled = false;
